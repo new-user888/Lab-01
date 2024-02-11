@@ -1,2 +1,3 @@
 # LAB-01
 LAB PROGRAM FOR ALGORITHM THEORY SUBJECT AT UNIVERSITY# Lab-01
+To build it you should use PySimpleGUI lib
