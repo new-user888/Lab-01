@@ -31,7 +31,6 @@ def windowSol():
 
     #An algorithm that will make the lab task
     
-    Log.writelog("PROGRAM EXECUTION")
     while True:
         events, vals = window.read()
         match events:
@@ -48,13 +47,15 @@ def windowSol():
                         if i > num_cmp:
                             cnt += 1
                     tm2 = datetime.now()
-                    Log.writelog(str(tm2 - tm1))
+                    Log.writelog(str(tm2 - tm1),cnt_arr,cnt,num_cmp)
                     result.update(f"Result is: {cnt}") 
                 except:
-                    Log.writelog("ERROR INPUT")
+                    Log.writelog("ERROR-INPUT","ERROR-INPUT","ERROR-INPUT","ERROR-INPUT")
                     result.update("Wrong input")
             case sg.WIN_CLOSED:
                 break
         print(events, "\n", vals)
-    Log.writelog("PROGRAM CLOSED")
     window.close()
+
+if __name__ == "__main__":
+    windowSol()

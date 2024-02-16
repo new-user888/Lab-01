@@ -23,7 +23,6 @@ def fileSol():
     win = sg.Window("Lab Program",layout=[[file_browser,file_browser_prompt],
                                           [user_prompt_num,input_num],
                                           [count_button,result]])
-    Log.writelog("PROGRAM EXECUTION")
     while True:
         events, vals = win.read()
         match events:
@@ -37,13 +36,15 @@ def fileSol():
                         if i > cmp_num:
                             cnt += 1
                     tm2 = datetime.now()
-                    Log.writelog(str(tm2 - tm1))
+                    Log.writelog(str(tm2 - tm1),int_arr,cnt,cmp_num)
                     result.update(f"Result is: {cnt}")
                 except:
-                    Log.writelog("ERROR INPUT")
+                    Log.writelog("ERROR-INPUT","ERROR-INPUT","ERROR-INPUT","ERROR-INPUT")
                     result.update("Wrong input")
             case sg.WIN_CLOSED:
                 break
         print(events, "\n", vals)
-    Log.writelog("PROGRAM CLOSED")
     win.close()
+
+if __name__ == "__main__":
+    fileSol()
